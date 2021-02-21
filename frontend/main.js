@@ -117,7 +117,7 @@ Vue.component('product', {
                     id: 2234,
                     color: "green",
                     image: './assets/sock_green.jpg',
-                    quantity: 10
+                    quantity: 12
                 },
                 {
                     id: 2235,

@@ -89,5 +89,5 @@
   }
 
   .outOfStock {
-    text-decoration: line-through;
+    color: red;
   }
