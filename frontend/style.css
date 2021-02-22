@@ -4,6 +4,10 @@ body {
   margin: 0px;
 }
 
+#app {
+  padding: 0 5rem;
+}
+
 .nav-bar {
   background: linear-gradient(-90deg, #84CF6A, #16C0B0);
   height: 60px;
@@ -13,13 +17,13 @@ body {
 .product {
   display: flex;
   flex-flow: wrap;
-  padding: 1rem;
+  padding: 1rem 5rem;
 }
 
-img {
+.product-image img {
   border: 1px solid #d8d8d8;
   width: 70%;
-  margin: 40px;
+  margin: 20px 40px;
   box-shadow: 0px .5px 1px #d8d8d8;
 }
 
@@ -33,10 +37,16 @@ img {
   width: 50%;
 }
 
+.quantity-status {
+  color: grey;
+}
+
 .color-box {
-  width: 40px;
-  height: 40px;
-  margin-top: 5px;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  display: inline-block;
+  cursor: pointer;
 }
 
 .cart {
@@ -64,32 +74,34 @@ button {
   background-color: #d8d8d8;
 }
 
-.review-form {
-  width: 400px;
+.review-form, .review-box {
+  width: 100%;
   padding: 20px;
-  margin: 40px;
+  margin: 10px 40px;
   border: 1px solid #d8d8d8;
 }
 
-input {
+.review-form input[type=text] {
   width: 100%;  
   height: 25px;
   margin-bottom: 20px;
 }
 
-textarea {
+.review-form input[type=submit] {
+  margin-left: 30%;
+  width: 40%;  
+  height: 25px;
+  margin-bottom: 20px;
+}
+
+.review-form textarea {
   width: 100%;
   height: 60px;
 }
 
-.tab {
-  margin-left: 20px;
-  cursor: pointer;
-}
-
-.activeTab {
-  color: #16C0B0;
-  text-decoration: underline;
+.review-form label {
+  display: block;
+  margin: 5px 0;
 }
 
 .outOfStock {

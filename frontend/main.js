@@ -72,9 +72,11 @@ Vue.component('product', {
 
                 <h1>{{ title }}</h1>
 
-                <p v-if="inventory > 10">In Stock</p>
-                <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
-                <p v-else :class="{outOfStock: true}">Out of Stock</p>
+                <div class="quantity-status">
+                    <p v-if="inventory > 10">In Stock</p>
+                    <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
+                    <p v-else :class="{outOfStock: true}">Out of Stock</p>
+                </div>
                 
                 <p>Shipping: {{ shipping }}</p>
 
@@ -82,18 +84,21 @@ Vue.component('product', {
                     <li v-for="d in details">{{ d }}</li>
                 </ul>
 
-                <div v-for="(v, index) in variants" :key="v.id"
-                    class="color-box" :style="{ backgroundColor: v.color }"
-                    @mouseover="updateSelected(index)">
-                    <!-- you can use '@' to replace 'v-on' -->
+                <div class="variant-box">
+                    <p>Color:</p>
+                    <div v-for="(v, index) in variants" :key="v.id"
+                        class="color-box" :style="{ backgroundColor: v.color }"
+                        @mouseover="updateSelected(index)">
+                    </div>
                 </div>
+                
 
                 <button v-on:click="addToCart"
                         :disabled="inventory <= 0"
                         :class="{disabledButton: inventory <= 0}">Add to Cart</button>
             </div>
 
-            <div>
+            <div class="review-box">
                 <h2>Reviews</h2>
                 <p v-if="reviews.length == 0">There are no reviews yet.</p>
                 <ul>
