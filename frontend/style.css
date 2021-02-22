@@ -57,6 +57,23 @@ body {
   box-shadow: 0 0 5px 0px grey;
   border: 1px solid #d8d8d8;
   padding: 5px 20px;
+
+  transition-property: bottom;
+  transition-duration: 0.1s;
+  transition-delay: 0s;
+  transition-timing-function: ease-in-out;
+}
+
+@keyframes cart-jump-animation {
+  0% { bottom: 5rem; }
+  30% { bottom: 6rem; }
+  70% { bottom: 4rem; }
+  100% { bottom: 5rem; }
+}
+
+.cart-jump {
+  animation-name: cart-jump-animation;
+  animation-duration: 0.4s;
 }
 
 button {

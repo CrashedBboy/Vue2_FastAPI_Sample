@@ -8,7 +8,7 @@
     <body>
         <nav class="nav-bar"></nav>
         <div id="app">
-            <div class="cart">
+            <div class="cart" :class="{'cart-jump': cartUpdating}">
                 <p>Cart({{ cart.length }})</p>
             </div>
             <product :premium="premium" @add-to-cart="updateCart"></product>

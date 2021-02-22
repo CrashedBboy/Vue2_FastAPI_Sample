@@ -169,11 +169,16 @@ var app = new Vue({
     el: '#app',
     data: {
         premium: true,
-        cart: []
+        cart: [],
+        cartUpdating: false
     },
     methods: {
         updateCart: function (productId) {
             this.cart.push(productId);
+
+            this.cartUpdating = true;
+            let that = this;
+            setTimeout(() => { that.cartUpdating = false; }, 400);
         }
     }
 });
